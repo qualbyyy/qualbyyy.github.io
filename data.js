@@ -60,28 +60,22 @@ const BIO_DATA = {
     },
     {
       "tag": "@mskmeethub",
-      "desc": "анонимный кф по персоне",
+      "desc": "группа сходок мск гдшеров",
       "url": "https://t.me/mskmeethub",
       "list": "группа сходок мск гдшеров"
     },
     {
       "tag": "@квалби",
-      "desc": "группа сходок мск гдшеров",
+      "desc": "личный щитпост с 8 админами",
       "url": "https://t.me/+9K6MPXTM8I42ZjRi",
       "list": "личный щитпост с 8 админами"
-    },
-    {
-      "tag": "",
-      "desc": "личный щитпост с 8 админами",
-      "url": "",
-      "list": ""
     }
   ],
   "accounts": [
     {
       "platform": "github",
-      "value": "qualbyy",
-      "url": "https://github.com/qualbyy",
+      "value": "qualbyyy",
+      "url": "https://github.com/qualbyyy",
       "copyable": false
     },
     {
