@@ -87,7 +87,37 @@
     const platformAsset=i=>({github:'github',steam:'steam',discord:'discord',xbox:'xbox',twitter:'x',tiktok:'tiktok'}[i.platform]||'minimal-web');
     const projectAsset=name=>({qplate:'qplate',mskmeetsgmd:'mskmeetsgmd',qsak:'qsak',gdlcheckbot:'gdlcheckbot','прочие проекты':'github'}[name]||'minimal-web');
     const projectDescription=name=>({qsak:'швейцарский нож всех форматов, компрессия файлов и удобный инструмент.',gdlcheckbot:'telegram-бот для проверки уровней, демонов и рекордов в demonlist.org с удобными инструментами.'}[name]||'');
-    $('#status').textContent=BIO_DATA.status;$('#about-name').textContent=BIO_DATA.name;$('#about-years').textContent=BIO_DATA.years;$('#about-location').textContent=BIO_DATA.location;$('#about-copy').textContent=BIO_DATA.about;
+    const quotes=[
+      ['Детали — не просто детали. Они и есть дизайн','Чарльз Имз'],
+      ['Простота — это высшая степень изощрённости','Леонардо да Винчи'],
+      ['Совершенство достигается не тогда, когда нечего добавить, а тогда, когда нечего убрать','Антуан де Сент-Экзюпери'],
+      ['Стиль — это способ сказать, кто ты есть, без слов','Рэйчел Зоуи'],
+      ['Творчество — это просто создание связей между вещами','Стив Джобс'],
+      ['Будь собой; все остальные роли уже заняты','Оскар Уайльд'],
+      ['Великие дела совершаются не силой, а упорством и любопытством','Сэмюэл Джонсон'],
+      ['Начни с того, что необходимо, затем делай то, что возможно — и внезапно ты сделаешь невозможное','Франциск Ассизский'],
+      ['Хороший дизайн виден сразу. Отличный дизайн незаметен','Джо Спарано'],
+      ['Любопытство — фитиль в свече обучения','Уильям Артур Уорд'],
+      ['Маленькие детали создают совершенство, но совершенство — не маленькая деталь','Микеланджело'],
+      ['Чтобы быть незаменимым, нужно всё время меняться','Коко Шанель'],
+      ['Логика приведёт вас из пункта А в пункт Б. Воображение приведёт вас куда угодно','Альберт Эйнштейн'],
+      ['Хаос в комнате — порядок в голове','Альберт Эйнштейн'],
+      ['Лучший способ предсказать будущее — создать его','Питер Друкер'],
+      ['Дизайн — это не то, как предмет выглядит и воспринимается. Дизайн — это то, как он работает','Стив Джобс'],
+      ['Вдохновение существует, но оно должно застать вас за работой','Пабло Пикассо'],
+      ['Твори так, чтобы твоя работа говорила за тебя громче слов','Бэнкси'],
+      ['Не бойтесь совершенства — вам его никогда не достичь','Сальвадор Дали'],
+      ['Порядок нужен глупцам, гений властвует над хаосом','Альберт Эйнштейн'],
+      ['Всё, что вы можете вообразить — реально','Пабло Пикассо'],
+      ['Каждая великая мечта начинается с мечтателя','Гарриет Табмен'],
+      ['Сделай шаг, и дорога появится сама собой','Стив Джобс'],
+      ['Главное — не смотреть на мир глазами других людей','Йоджи Ямамото']
+    ];
+    const previousQuote=Number(localStorage.getItem('qualbyy-bio-quote'));
+    let quoteIndex=Math.floor(Math.random()*quotes.length);
+    if(quotes.length>1&&quoteIndex===previousQuote)quoteIndex=(quoteIndex+1)%quotes.length;
+    localStorage.setItem('qualbyy-bio-quote',quoteIndex);
+    $('#status').textContent=`«${quotes[quoteIndex][0]}» — ${quotes[quoteIndex][1]}`;$('#about-name').textContent=BIO_DATA.name;$('#about-years').textContent=BIO_DATA.years;$('#about-location').textContent=BIO_DATA.location;$('#about-copy').textContent=BIO_DATA.about;
     $('#stack-list').innerHTML=BIO_DATA.stack.map(i=>`<div class="stack-item"><dt class="icon-label">${asset(stackAsset(i))}${esc(i.cat)}</dt><dd>${esc(i.list)}</dd></div>`).join('');
     $('#setup-list').innerHTML=BIO_DATA.setup.map(i=>`<div class="stack-item"><dt class="icon-label">${asset(setupAsset(i))}${esc(i.key)}</dt><dd>${esc(i.val)}</dd></div>`).join('');
     const projects=[];
