@@ -47,12 +47,6 @@ const BIO_DATA = {
       "list": "про историю geometry dash"
     },
     {
-      "tag": "@gdashboard",
-      "desc": "лучший новостник по gd",
-      "url": "https://t.me/gdashboard",
-      "list": "лучший новостник по gd"
-    },
-    {
       "tag": "@gmdshodki",
       "desc": "сходки гдшеров",
       "url": "https://t.me/gmdshodki",
