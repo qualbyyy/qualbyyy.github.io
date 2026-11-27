@@ -3,7 +3,6 @@
 
 # Белый список: разрешить только файлы, необходимые для работы сайта
 !/.gitignore
-!/AGENTS.md
 !/index.html
 !/data.js
 !/README.md
